@@ -2,5 +2,4 @@ warp://188.114.98.108:3854/?ifp=5-10&ifps=50-100&ifpd=10-20
 warp://188.114.96.202:878/?ifp=5-10&ifps=50-100&ifpd=10-20
 warp://162.159.192.35:1180/?ifp=5-10#IR 🇮🇷 2
 warp://188.114.96.147:7152/?ifp=10-10#IR 🇮🇷 3
-warp://auto/?ifp=10-10#Wireguard #GE 1 🇩🇪
-warp://auto/?ifp=5-10#Wireguard #GE 2🇩🇪
+warp://auto#WarpInWarp ⭐️&&detour=warp://auto#Warp 🇮🇷

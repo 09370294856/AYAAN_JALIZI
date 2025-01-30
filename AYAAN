@@ -1,2 +1,375 @@
-warp://@auto6/?ifp=1-3&ifpm=m4#Local&&detour=warp://@auto4/?ifp=1-5&ifpm=m6#WoW
-warp://@auto6/?ifp=5-10&ifpm=m5#Local&&detour=warp://@auto6/?ifp=1-5&ifpm=m4#WoW
+{
+  "dns": {
+    "final": "local-dns",
+    "rules": [
+      {
+        "clash_mode": "Global",
+        "server": "proxy-dns",
+        "source_ip_cidr": [
+          "172.19.0.0/30"
+        ]
+      },
+      {
+        "server": "proxy-dns",
+        "source_ip_cidr": [
+          "172.19.0.0/30"
+        ]
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "direct-dns"
+      },
+      {
+        "rule_set": [
+          "geosite-ir"
+        ],
+        "server": "direct-dns"
+      }
+    ],
+    "servers": [
+      {
+        "address": "tcp://8.8.8.8",
+        "address_resolver": "local-dns",
+        "detour": "proxy",
+        "tag": "proxy-dns"
+      },
+      {
+        "address": "local",
+        "detour": "direct",
+        "tag": "local-dns"
+      },
+      {
+        "address": "rcode://success",
+        "tag": "block"
+      },
+      {
+        "address": "local",
+        "detour": "direct",
+        "tag": "direct-dns"
+      }
+    ],
+    "strategy": "prefer_ipv4"
+  },
+  "inbounds": [
+    {
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "endpoint_independent_nat": false,
+      "mtu": 9000,
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 2080
+        }
+      },
+      "sniff": true,
+      "stack": "system",
+      "strict_route": false,
+      "type": "tun"
+    },
+    {
+      "listen": "127.0.0.1",
+      "listen_port": 2080,
+      "sniff": true,
+      "type": "mixed",
+      "users": []
+    }
+  ],
+  "outbounds": [
+    {
+      "outbounds": [
+        "auto",
+        "direct",
+        "🇬🇧@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+        "🇳🇱@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+        "🇹🇷@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+        "🇮🇹@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+        "🇩🇪@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+        "1.🇲🇩@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+        "2.🇬🇷@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+        "3.🇫🇷@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام"
+      ],
+      "tag": "proxy",
+      "type": "selector"
+    },
+    {
+      "interval": "10m",
+      "outbounds": [
+        "🇬🇧@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+        "🇳🇱@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+        "🇹🇷@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+        "🇮🇹@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+        "🇩🇪@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+        "1.🇲🇩@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+        "2.🇬🇷@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+        "3.🇫🇷@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام"
+      ],
+      "tag": "auto",
+      "tolerance": 50,
+      "type": "urltest",
+      "url": "http://www.gstatic.com/generate_204"
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "tag": "dns-out",
+      "type": "dns"
+    },
+    {
+      "tag": "block",
+      "type": "block"
+    },
+    {
+      "down_mbps": 20,
+      "obfs": {
+        "password": "@sinavm",
+        "type": "salamander"
+      },
+      "password": "@SinaVM",
+      "server": "sinavm.sinabigo.ir",
+      "server_port": 443,
+      "tag": "🇬🇧@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+      "tls": {
+        "ech": {
+          "config": [
+            "-----BEGIN ECH CONFIGS-----",
+            "AEb+DQBCAAAgACDE2XC0DFekiO/4LCnCgBynGqRreSZbM1XxTRftd+RKGwAIAAEA",
+            "AQABAAMAD2FwcC5zaW5hYmlnby5pcgAA",
+            "-----END ECH CONFIGS-----"
+          ]
+        },
+        "enabled": true,
+        "server_name": "app.sinabigo.ir"
+      },
+      "type": "hysteria2",
+      "up_mbps": 20
+    },
+    {
+      "down_mbps": 20,
+      "obfs": {
+        "password": "T.me/SinaVM",
+        "type": "salamander"
+      },
+      "password": "@SinaVM",
+      "server": "sinavm.sinabigo.ir",
+      "server_port": 80,
+      "tag": "🇳🇱@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+      "tls": {
+        "ech": {
+          "config": [
+            "-----BEGIN ECH CONFIGS-----",
+            "AEb+DQBCAAAgACDyf+YdFFkY3ZK6S3tRJ3ABzx1aNSHMJeSCyusrUehSHgAIAAEA",
+            "AQABAAMAD2JpYS5zaW5hYmlnby5pcgAA",
+            "-----END ECH CONFIGS-----"
+          ]
+        },
+        "enabled": true,
+        "server_name": "bia.
+sinabigo.ir"
+      },
+      "type": "hysteria2",
+      "up_mbps": 20
+    },
+    {
+      "down_mbps": 20,
+      "obfs": {
+        "password": "T.me/SinaVM",
+        "type": "salamander"
+      },
+      "password": "@SinaVM",
+      "server": "sinavm.sinabigo.ir",
+      "server_port": 8080,
+      "tag": "🇹🇷@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+      "tls": {
+        "ech": {
+          "config": [
+            "-----BEGIN ECH CONFIGS-----",
+            "ADn+DQA1AAAgACA/7pwvJuNoq0OIe+m+5F1ZuBPaRTKMA+SftkaEcRUpNwAIAAEA",
+            "AQABAAMAAicnAAA=",
+            "-----END ECH CONFIGS-----"
+          ]
+        },
+        "enabled": true,
+        "server_name": "sinavm.sinabigo.ir"
+      },
+      "type": "hysteria2",
+      "up_mbps": 20
+    },
+    {
+      "down_mbps": 20,
+      "obfs": {
+        "password": "T.me/SinaVM",
+        "type": "salamander"
+      },
+      "password": "@SinaVM",
+      "server": "sinavm.sinabigo.ir",
+      "server_port": 33528,
+      "tag": "🇮🇹@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+      "tls": {
+        "ech": {
+          "config": [
+            "-----BEGIN ECH CONFIGS-----",
+            "AEr+DQBGAAAgACBJ6S8ziLv0IhI/KcOojTDchjZjf+t9dWbSt+aVj9t6FAAIAAEA",
+            "AQABAAMAE3NpbmF2bTEuc2luYWJpZ28uaXIAAA==",
+            "-----END ECH CONFIGS-----"
+          ]
+        },
+        "enabled": true,
+        "server_name": "sinavm1.sinabigo.ir"
+      },
+      "type": "hysteria2",
+      "up_mbps": 20
+    },
+    {
+      "down_mbps": 10,
+      "obfs": {
+        "password": "T.me/sinavm",
+        "type": "salamander"
+      },
+      "password": "@SinaVM",
+      "server": "app.soft10.ir",
+      "server_port": 443,
+      "tag": "🇩🇪@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+      "tls": {
+        "alpn": [
+          "h3"
+        ],
+        "enabled": true,
+        "server_name": "app.soft10.ir"
+      },
+      "type": "hysteria2",
+      "up_mbps": 10
+    },
+    {
+      "down_mbps": 10,
+      "obfs": {
+        "password": "T.me/SiNABiGO",
+        "type": "salamander"
+      },
+      "password": "@SinaVM",
+      "server": "app.soft10.ir",
+      "server_port": 80,
+      "tag": "1.🇲🇩@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+      "tls": {
+        "alpn": [
+          "h3"
+        ],
+        "enabled": true,
+        "insecure": true,
+        "server_name": "sinavm.soft10.ir"
+      },
+      "type": "hysteria2",
+      "up_mbps": 10
+    },
+    {
+      "down_mbps": 10,
+      "obfs": {
+        "password": "T.me/SinaVM",
+        "type": "salamander"
+      },
+      "password": "@SinaVM",
+      "server": "app.soft10.ir",
+      "server_port": 42973,
+      "tag": "2.🇬🇷@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "sinabigo.soft10.ir"
+      },
+      "type": "hysteria2",
+      "up_mbps": 10
+    },
+    {
+      "down_mbps": 20,
+      "obfs": {
+        "password": "@SinaVM",
+        "type": "salamander"
+      },
+      "password": "@SinaVM",
+      "server": "app.soft10.ir",
+      "server_port": 50866,
+      "tag": "3.🇫🇷@𝐒𝐢𝐍𝐀𝐕𝐌 👈🏻کانال تلگرام",
+      "tls": {
+        "enabled": true,
+        "server_name": "sinabigo.soft10.ir"
+      },
+      "type": "hysteria2",
+      "up_mbps": 10
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "final": "proxy",
+    "rule_set": [
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-ads",
+        "type": "remote",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-private",
+        "type": "remote",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geosite-ir",
+        "type": "remote",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ir.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+"tag": "geoip-private",
+        "type": "remote",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/private.srs"
+      },
+      {
+        "download_detour": "direct",
+        "format": "binary",
+        "tag": "geoip-ir",
+        "type": "remote",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/ir.srs"
+      }
+    ],
+    "rules": [
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "proxy"
+      },
+      {
+        "outbound": "dns-out",
+        "protocol": "dns"
+      },
+      {
+        "outbound": "direct",
+        "rule_set": [
+          "geoip-private",
+          "geosite-private",
+          "geosite-ir",
+          "geoip-ir"
+        ]
+      },
+      {
+        "outbound": "block",
+        "rule_set": [
+          "geosite-ads"
+        ]
+      }
+    ]
+  }
+} 

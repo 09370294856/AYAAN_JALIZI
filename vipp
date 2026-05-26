@@ -1,0 +1,359 @@
+{
+"_comment": {
+"remark": "hamedvpns"
+},
+"log": {
+"access": "",
+"error": "",
+"loglevel": "info",
+"dnsLog": false
+},
+"inbounds": [
+{
+"tag": "in_proxy",
+"port": 1080,
+"protocol": "socks",
+"listen": "0.0.0.0",
+"settings": {
+"auth": "noauth",
+"udp": true,
+"userLevel": 8
+},
+"sniffing": {
+"enabled": false
+}
+},
+{
+"tag": "http-in",
+"port": 10808,
+"listen": "::",
+"protocol": "http"
+}
+],
+"outbounds": [
+{
+"tag": "proxy",
+"protocol": "trojan",
+"settings": {
+"servers": [
+{
+"address": "auth.vercel.com",
+"method": "chacha20-poly1305",
+"ota": false,
+"password": "c0000403-3ca7-463e-9464-9d72edb85191",
+"port": 443,
+"level": 8,
+"flow": ""
+}
+]
+},
+"streamSettings": {
+"network": "ws",
+"security": "tls",
+"wsSettings": {
+"path": "/?ed=2048",
+"headers": {
+"Host": "jolly-queen-8161.ayanjalizavi90.workers.dev"
+}
+},
+"tlsSettings": {
+"allowInsecure": true,
+"serverName": "jolly-queen-8161.ayanjalizavi90.workers.dev",
+"alpn": [
+"http/1.1"
+],
+"fingerprint": "ios",
+"show": false
+},
+"sockopt": {
+"dialerProxy": "fragment",
+"tcpKeepAliveIdle": 100,
+"tcpNoDelay": true
+}
+},
+"mux": {
+"enabled": false,
+"concurrency": 8
+}
+},
+{
+"tag": "fragment",
+"protocol": "freedom",
+"settings": {
+"domainStrategy": "AsIs",
+"fragment": {
+"packets": "tlshello",
+"length": "100-200",
+"interval": "10-20"
+}
+},
+"streamSettings": {
+"sockopt": {
+"tcpKeepAliveIdle": 100,
+"tcpNoDelay": true
+}
+}
+},
+{
+"tag": "direct",
+"protocol": "freedom",
+"settings": {
+"domainStrategy": "UseIp"
+}
+},
+{
+"tag": "blackhole",
+"protocol": "blackhole",
+"settings": {}
+}
+],
+"dns": {
+"servers": [
+"8.8.8.8"
+]
+},
+"routing": {
+"domainStrategy": "UseIp",
+"rules": [],
+"balancers": []
+}
+}
+{
+"_comment": {
+"remark": "hamedvpns"
+},
+"log": {
+"access": "",
+"error": "",
+"loglevel": "info",
+"dnsLog": false
+},
+"inbounds": [
+{
+"tag": "in_proxy",
+"port": 1080,
+"protocol": "socks",
+"listen": "0.0.0.0",
+"settings": {
+"auth": "noauth",
+"udp": true,
+"userLevel": 8
+},
+"sniffing": {
+"enabled": false
+}
+},
+{
+"tag": "http-in",
+"port": 10808,
+"listen": "::",
+"protocol": "http"
+}
+],
+"outbounds": [
+{
+"tag": "proxy",
+"protocol": "trojan",
+"settings": {
+"servers": [
+{
+"address": "jolly-queen-8161.ayanjalizavi90.workers.dev",
+"method": "chacha20-poly1305",
+"ota": false,
+"password": "c0000403-3ca7-463e-9464-9d72edb85191",
+"port": 443,
+"level": 8,
+"flow": ""
+}
+]
+},
+"streamSettings": {
+"network": "ws",
+"security": "tls",
+"wsSettings": {
+"path": "/?ed=2048",
+"headers": {
+"Host": "jolly-queen-8161.ayanjalizavi90.workers.dev"
+}
+},
+"tlsSettings": {
+"allowInsecure": true,
+"serverName": "jolly-queen-8161.ayanjalizavi90.workers.dev",
+"alpn": [
+"http/1.1"
+],
+"fingerprint": "ios",
+"show": false
+},
+"sockopt": {
+"dialerProxy": "fragment",
+"tcpKeepAliveIdle": 100,
+"tcpNoDelay": true
+}
+},
+"mux": {
+"enabled": false,
+"concurrency": 8
+}
+},
+{
+"tag": "fragment",
+"protocol": "freedom",
+"settings": {
+"domainStrategy": "AsIs",
+"fragment": {
+"packets": "tlshello",
+"length": "100-200",
+"interval": "10-20"
+}
+},
+"streamSettings": {
+"sockopt": {
+"tcpKeepAliveIdle": 100,
+"tcpNoDelay": true
+}
+}
+},
+{
+"tag": "direct",
+"protocol": "freedom",
+"settings": {
+"domainStrategy": "UseIp"
+}
+},
+{
+"tag": "blackhole",
+"protocol": "blackhole",
+"settings": {}
+}
+],
+"dns": {
+"servers": [
+"8.8.8.8"
+]
+},
+"routing": {
+"domainStrategy": "UseIp",
+"rules": [],
+"balancers": []
+}
+}
+{
+  "remarks": " AYAAN VIP ",
+
+"log": {
+"access": "",
+"error": "",
+"loglevel": "info",
+"dnsLog": false
+},
+"inbounds": [
+{
+"tag": "in_proxy",
+"port": 1080,
+"protocol": "socks",
+"listen": "0.0.0.0",
+"settings": {
+"auth": "noauth",
+"udp": true,
+"userLevel": 8
+},
+"sniffing": {
+"enabled": false
+}
+},
+{
+"tag": "http-in",
+"port": 10808,
+"listen": "::",
+"protocol": "http"
+}
+],
+"outbounds": [
+{
+"tag": "proxy",
+"protocol": "trojan",
+"settings": {
+"servers": [
+{
+"address": "cdn.tzpro.xyz",
+"method": "chacha20-poly1305",
+"ota": false,
+"password": "c0000403-3ca7-463e-9464-9d72edb85191",
+"port": 443,
+"level": 8,
+"flow": ""
+}
+]
+},
+"streamSettings": {
+"network": "ws",
+"security": "tls",
+"wsSettings": {
+"path": "/?ed=2048",
+"headers": {
+"Host": "jolly-queen-8161.ayanjalizavi90.workers.dev"
+}
+},
+"tlsSettings": {
+"allowInsecure": true,
+"serverName": "jolly-queen-8161.ayanjalizavi90.workers.dev",
+"alpn": [
+"http/1.1"
+],
+"fingerprint": "ios",
+"show": false
+},
+"sockopt": {
+"dialerProxy": "fragment",
+"tcpKeepAliveIdle": 100,
+"tcpNoDelay": true
+}
+},
+"mux": {
+"enabled": false,
+"concurrency": 8
+}
+},
+{
+"tag": "fragment",
+"protocol": "freedom",
+"settings": {
+"domainStrategy": "AsIs",
+"fragment": {
+"packets": "tlshello",
+"length": "100-200",
+"interval": "10-20"
+}
+},
+"streamSettings": {
+"sockopt": {
+"tcpKeepAliveIdle": 100,
+"tcpNoDelay": true
+}
+}
+},
+{
+"tag": "direct",
+"protocol": "freedom",
+"settings": {
+"domainStrategy": "UseIp"
+}
+},
+{
+"tag": "blackhole",
+"protocol": "blackhole",
+"settings": {}
+}
+],
+"dns": {
+"servers": [
+"8.8.8.8"
+]
+},
+"routing": {
+"domainStrategy": "UseIp",
+"rules": [],
+"balancers": []
+}
+}
